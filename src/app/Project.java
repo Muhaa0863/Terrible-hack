@@ -13,11 +13,11 @@ public class Project {
 
 	  public static void main(String[] args) {
 
-	    JFrame f = new JFrame("Anime woman generator for Terrible Hack XIV");
+	    JFrame f = new JFrame("Character Creator for Terrible Hack XIV");
 	    f.setSize(500, 500); f.setLocation(300,200);
 	    final JTextArea textArea = new JTextArea(20, 80);
 	    f.getContentPane().add(BorderLayout.CENTER, textArea);
-	    final JButton button = new JButton("Click to generate anime woman");
+	    final JButton button = new JButton("Click to generate original character");
 	    f.getContentPane().add(BorderLayout.CENTER, button);
 	    button.addActionListener(new ActionListener() {
 
