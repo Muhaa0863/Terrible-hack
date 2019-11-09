@@ -2,7 +2,8 @@ package app;
 
 public class test {
     public static void main(String[] args) throws Exception {
-        beemovie cur = new beemovie("C:\\Users\\Flame\\IdeaProjects\\test 1\\Chapter 2\\thack\\Terrible-hack\\src\\app\\Bee movie script.txt");
+        System.out.println(System.getProperty("user.dir"));
+        beemovie cur = new beemovie(System.getProperty("user.dir")+"\\src\\app\\Bee movie script.txt");
         cur.recurse();
     }
 }
