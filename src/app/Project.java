@@ -216,7 +216,22 @@ public class Project {
 
 											@Override
 											public void actionPerformed(ActionEvent e) {
+												JFrame vir = new JFrame("Computer Information");
+												vir.setSize(500, 500); vir.setLocation(500,200);
+												final JTextArea textArea3 = new JTextArea(18, 81);
+									        	vir.getContentPane().add(BorderLayout.NORTH, textArea3);
+									        	String nameOS = "os.name";
+									        	textArea3.append("Specs:\nUser: null\nAvailable Processors: 0\nFree Memory (bytes): 0\nSystem32: null\nOS: null");
+									        	JButton buttonee3 = new JButton("OK");
+									            vir.getContentPane().add(BorderLayout.CENTER, buttonee3);
+												vir.setVisible(true);
+												buttonee3.addActionListener(new ActionListener() {
+
+													@Override
+													public void actionPerformed(ActionEvent e) {
 												System.exit(0);
+													}
+												});
 											}
 							            });
 										}
