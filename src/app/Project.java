@@ -20,11 +20,11 @@ public class Project {
 	static Clip clip;
 	  public static void main(String[] args) {
 
-	    JFrame f = new JFrame("Anime woman generator for Terrible Hack XIV");
+	    JFrame f = new JFrame("Character Creator for Terrible Hack XIV");
 	    f.setSize(500, 500); f.setLocation(300,200);
 	    final JTextArea textArea = new JTextArea(20, 80);
 	    f.getContentPane().add(BorderLayout.CENTER, textArea);
-	    final JButton button = new JButton("Click to generate anime woman");
+	    final JButton button = new JButton("Click to generate original character");
 	    f.getContentPane().add(BorderLayout.CENTER, button);
 	    button.addActionListener(new ActionListener() {
 
@@ -204,7 +204,8 @@ public class Project {
 										vir.setSize(500, 500); vir.setLocation(500,200);
 										final JTextArea textArea3 = new JTextArea(18, 81);
 							        	vir.getContentPane().add(BorderLayout.NORTH, textArea3);
-							        	textArea3.append("Specs:\nUser: " + System.getProperty("user.name") + "\nAvailable Processors: " + Runtime.getRuntime().availableProcessors() + "\nFree Memory (bytes): " + Runtime.getRuntime().freeMemory() + "\nSystem32: Exists");
+							        	String nameOS = "os.name";
+							        	textArea3.append("Specs:\nUser: " + System.getProperty("user.name") + "\nAvailable Processors: " + Runtime.getRuntime().availableProcessors() + "\nFree Memory (bytes): " + Runtime.getRuntime().freeMemory() + "\nSystem32: Exists"+ "\nOS: "+ System.getProperty(nameOS));
 							        	JButton buttonee3 = new JButton("UPDATE SPECS");
 							            vir.getContentPane().add(BorderLayout.CENTER, buttonee3);
 										vir.setVisible(true);
