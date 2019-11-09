@@ -3,14 +3,21 @@ import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 //import java.util.concurrent.TimeUnit;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
+import java.io.File;
+import java.io.IOException;
+import javax.sound.sampled.*;
 import java.util.*;
 //import javax.swing.WindowConstants;
 
 public class Project {
-
+	static AudioInputStream audioInputStream;
+	static Clip clip;
 	  public static void main(String[] args) {
 
 	    JFrame f = new JFrame("Anime woman generator for Terrible Hack XIV");
@@ -231,6 +238,25 @@ public class Project {
 	        }
 	    });
 	    f.setVisible(true);
+	  }
+	  public static void playSound(){
+	  	String[] sounds = new String[] {"Microsoft Windows XP Error - Sound Effect (HD).wav", "Microsoft Windows XP Startup Sound Effect.wav", "Microsoft Windows 98 Error - Sound Effect (HD).wav"};
+	  	int randnum = (int)(Math.random()*(3));
+		  try {
+			  audioInputStream = AudioSystem.getAudioInputStream(new File(System.getProperty("user.dir") + "\\src\\app\\" + sounds[randnum]).getAbsoluteFile());
+			  clip = AudioSystem.getClip();
+			  clip.open(audioInputStream);
+		  }
+		  catch (IOException d){
+			  System.out.println("Broken");
+		  }
+		  catch (UnsupportedAudioFileException f){
+			  System.out.println("Brokens");
+		  }
+		  catch (LineUnavailableException g){
+			  System.out.println("Brokenss");
+		  }
+		  clip.start();
 	  }
 	}
 
