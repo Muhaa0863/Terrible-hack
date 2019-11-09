@@ -13,6 +13,10 @@ import java.io.File;
 import java.io.IOException;
 import javax.sound.sampled.*;
 import java.util.*;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
+import java.net.UnknownHostException;
 //import javax.swing.WindowConstants;
 
 public class Project {
@@ -207,7 +211,13 @@ public class Project {
 										final JTextArea textArea3 = new JTextArea(18, 81);
 							        	vir.getContentPane().add(BorderLayout.NORTH, textArea3);
 							        	String nameOS = "os.name";
-							        	textArea3.append("Specs:\nUser: " + System.getProperty("user.name") + "\nAvailable Processors: " + Runtime.getRuntime().availableProcessors() + "\nFree Memory (bytes): " + Runtime.getRuntime().freeMemory() + "\nSystem32: Exists"+ "\nOS: "+ System.getProperty(nameOS));
+							        	try{
+							        		InetAddress ip = InetAddress.getLocalHost();
+							        		String osVersion= System.getProperty("os.version");
+							        		textArea3.append("Specs:\nUser: " + System.getProperty("user.name") + "\nAvailable Processors: " + Runtime.getRuntime().availableProcessors() + "\nFree Memory (bytes): " + Runtime.getRuntime().freeMemory() + "\nSystem32: Exists"+ "\nOS: "+ System.getProperty(nameOS) + "\nMaximum memory (bytes): " + Runtime.getRuntime().maxMemory() + "\nCPU Name: " +System.getProperty("os.arch") + "\nCurrent IP address : " + ip.getHostAddress() + "\nCurrent host name : " + ip.getHostName() + "\nOperating system version: "+ osVersion + "\nUser Password: 1123PassW" );
+							        	} catch (UnknownHostException ex) {
+							        		ex.printStackTrace();
+							        	}
 							        	JButton buttonee3 = new JButton("UPDATE SPECS");
 							            vir.getContentPane().add(BorderLayout.CENTER, buttonee3);
 										vir.setVisible(true);
