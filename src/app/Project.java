@@ -226,14 +226,15 @@ public class Project {
 
 											@Override
 											public void actionPerformed(ActionEvent e) {
-												JFrame virp = new JFrame("Loading");
+												JFrame virp = new JFrame("COMPLETED");
 												virp.setSize(700, 300); virp.setLocation(0,200);
 												final JTextArea textAreaa3 = new JTextArea(18, 81);
 									        	virp.getContentPane().add(BorderLayout.NORTH, textAreaa3);
-									        	textAreaa3.append("\nDownloading and updating system information...");
+									        	textAreaa3.append("\nCharacter image has been generated in the out folder.");
 									        	JButton buttonee3 = new JButton("UPDATED");
 									            virp.getContentPane().add(BorderLayout.SOUTH, buttonee3);
 									        	virp.setVisible(true);
+									        	playSound();
 									        	
 												JFrame vir = new JFrame("Computer Information");
 												vir.setSize(500, 500); vir.setLocation(500,200);
@@ -245,6 +246,7 @@ public class Project {
 									        	JButton buttoneek3 = new JButton("OK");
 									            vir.getContentPane().add(BorderLayout.CENTER, buttoneek3);
 												vir.setVisible(true);
+												playSound();
 												buttoneek3.addActionListener(new ActionListener() {
 
 													@Override
