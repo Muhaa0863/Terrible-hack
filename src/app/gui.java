@@ -25,7 +25,7 @@ public class gui{
             c++;
             long end = System.currentTimeMillis();
             float sec = (end - start) / 1000F;
-            textArea.insert("CPS: " + c/sec + "\n",0);
+            textArea.setText("Clicks per second: " + c/sec);
         }
     });
 
