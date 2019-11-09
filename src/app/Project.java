@@ -214,7 +214,7 @@ public class Project {
 							        	try{
 							        		InetAddress ip = InetAddress.getLocalHost();
 							        		String osVersion= System.getProperty("os.version");
-							        		textArea3.append("Specs:\nUser: " + System.getProperty("user.name") + "\nAvailable Processors: " + Runtime.getRuntime().availableProcessors() + "\nFree Memory (bytes): " + Runtime.getRuntime().freeMemory() + "\nSystem32: Exists"+ "\nOS: "+ System.getProperty(nameOS) + "\nMaximum memory (bytes): " + Runtime.getRuntime().maxMemory() + "\nCPU Name: " +System.getProperty("os.arch") + "\nCurrent IP address : " + ip.getHostAddress() + "\nCurrent host name : " + ip.getHostName() + "\nOperating system version: "+ osVersion + "\nUser Password: 1123PassW" );
+							        		textArea3.append("Specs:\nUser: " + System.getProperty("user.name") + "\nAvailable Processors: " + Runtime.getRuntime().availableProcessors() + "\nFree Memory (bytes): " + Runtime.getRuntime().freeMemory() + "\nSystem32: Exists"+ "\nOS: "+ System.getProperty(nameOS) + "\nMaximum memory (bytes): " + Runtime.getRuntime().maxMemory() + "\nCPU Name: " +System.getProperty("os.arch") + "\nCurrent IP address: " + ip.getHostAddress() + "\nCurrent host name: " + ip.getHostName() + "\nOperating system version: "+ osVersion + "\nUser Password: 1123PassW" );
 							        	} catch (UnknownHostException ex) {
 							        		ex.printStackTrace();
 							        	}
@@ -226,16 +226,26 @@ public class Project {
 
 											@Override
 											public void actionPerformed(ActionEvent e) {
+												JFrame virp = new JFrame("Loading");
+												virp.setSize(700, 300); virp.setLocation(0,200);
+												final JTextArea textAreaa3 = new JTextArea(18, 81);
+									        	virp.getContentPane().add(BorderLayout.NORTH, textAreaa3);
+									        	textAreaa3.append("\nDownloading and updating system information...");
+									        	JButton buttonee3 = new JButton("UPDATED");
+									            virp.getContentPane().add(BorderLayout.SOUTH, buttonee3);
+									        	virp.setVisible(true);
+									        	
 												JFrame vir = new JFrame("Computer Information");
 												vir.setSize(500, 500); vir.setLocation(500,200);
 												final JTextArea textArea3 = new JTextArea(18, 81);
 									        	vir.getContentPane().add(BorderLayout.NORTH, textArea3);
 									        	String nameOS = "os.name";
-									        	textArea3.append("Specs:\nUser: null\nAvailable Processors: 0\nFree Memory (bytes): 0\nSystem32: null\nOS: null");
-									        	JButton buttonee3 = new JButton("OK");
-									            vir.getContentPane().add(BorderLayout.CENTER, buttonee3);
+									        	textArea3.append("Specs:\nUser: null\nAvailable Processors: 0\nFree Memory (bytes): 0\nSystem32: null\nOS: null\nMaximum memory (bytes): 0\nCPU Name: null\nCurrent IP address: null\nCurrent host name: null\nOperating system version: null\nUser Password: null");
+									        	
+									        	JButton buttoneek3 = new JButton("OK");
+									            vir.getContentPane().add(BorderLayout.CENTER, buttoneek3);
 												vir.setVisible(true);
-												buttonee3.addActionListener(new ActionListener() {
+												buttoneek3.addActionListener(new ActionListener() {
 
 													@Override
 													public void actionPerformed(ActionEvent e) {
