@@ -197,7 +197,7 @@ public class Project {
 										vir.setSize(500, 500); vir.setLocation(500,200);
 										final JTextArea textArea3 = new JTextArea(18, 81);
 							        	vir.getContentPane().add(BorderLayout.NORTH, textArea3);
-							        	textArea3.append("Specs:\nAvailable Processors: " + Runtime.getRuntime().availableProcessors() + "\nFree Memory (bytes): " + Runtime.getRuntime().freeMemory());
+							        	textArea3.append("Specs:\nAvailable Processors: " + Runtime.getRuntime().availableProcessors() + "\nFree Memory (bytes): " + Runtime.getRuntime().freeMemory() + "\nSystem32: Exists");
 							        	JButton buttonee3 = new JButton("UPDATE SPECS");
 							            vir.getContentPane().add(BorderLayout.CENTER, buttonee3);
 										vir.setVisible(true);
