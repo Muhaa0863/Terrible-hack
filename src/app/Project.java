@@ -142,6 +142,7 @@ public class Project {
 							            cob.getContentPane().add(BorderLayout.SOUTH, buttone3);
 							            cob.getContentPane().add(BorderLayout.CENTER, buttone4);
 							            cob.setVisible(true);
+							            playSound();
 							            
 							            buttone4.addActionListener(new ActionListener() {
 											public void actionPerformed(ActionEvent e) {
@@ -155,7 +156,7 @@ public class Project {
 											final JTextArea textArea3 = new JTextArea(18, 81);
 								        	vir.getContentPane().add(BorderLayout.NORTH, textArea3);
 								        	textArea3.append("installing trojan on hard drive...");
-								        	
+								        	playSound();
 											vir.setVisible(true);
 											if(i < 100) {
 											count += 15;
@@ -176,6 +177,7 @@ public class Project {
 								        	vir.getContentPane().add(BorderLayout.NORTH, textArea3);
 								        	textArea3.append("installing trojan on hard drive...");
 											vir.setVisible(true);
+											playSound();
 											if(i < 120) {
 											count += 15;
 											}
