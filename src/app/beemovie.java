@@ -19,7 +19,6 @@ class beemovie {
                     if (curstr.charAt(i) == 'B' && curstr.charAt(i + 1) == 'e' && curstr.charAt(i + 2) == 'e') {
                         recurses = new beemovie(System.getProperty("user.dir")+"\\src\\app\\Bee movie script.txt");
                         recurses.recurse();
-                        
                     }
                 }
             }
