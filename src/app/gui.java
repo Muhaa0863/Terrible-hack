@@ -14,14 +14,14 @@ private static AudioInputStream audioInputStream;
   public static void main(String[] args) throws Exception{
       audioInputStream = AudioSystem.getAudioInputStream(new File(System.getProperty("user.dir")+"\\src\\app\\Bruh Sound Effect 2.wav").getAbsoluteFile());
       JFrame f = new JFrame("bruh clicks");
-      f.setSize(250, 250);
+      f.setSize(1920, 1080);
       f.setLocation(300,200);
-      final JTextArea textArea = new JTextArea(10, 40);
+      final JTextArea textArea = new JTextArea(100, 100);
       f.getContentPane().add(BorderLayout.CENTER, textArea);
       final JButton button = new JButton("Click Me");
       clip = AudioSystem.getClip();
       clip.open(audioInputStream);
-      f.getContentPane().add(BorderLayout.SOUTH, button);
+      f.getContentPane().add(BorderLayout.EAST, button);
       long start = System.currentTimeMillis();
       button.addActionListener(new ActionListener() {
           int c = 0;
